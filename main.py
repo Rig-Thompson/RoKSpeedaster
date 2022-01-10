@@ -1,13 +1,13 @@
 from tkinter import *
-
+totalhours1 = 0
 #main settings of window
 root = Tk()
 
 def totaldef():
     all1min = all1mint.get()
     all5min = all5mint.get()
-    totalhours = (int(all1min) + int(all5min))
-
+    totalhours1 = (int(all1min) + int(all5min))
+    totalhours = totalhours1
 
 root['bg'] = '#a7e0d9'
 root.title('Let me take a selfie')
@@ -93,7 +93,7 @@ text20.place(x=1049, y=514)
     #TOTAL TEXT
 totalhours = 0
 totaldays = 0
-totalhourstext = Label(canvas, text=totalhours, font=('Comic Sans MS', 17 ), justify=CENTER)
+totalhourstext = Label(canvas, textvariable=totalhours, font=('Comic Sans MS', 17 ), justify=CENTER)
 totalhourstext.config(bg='#a7e0d9')
 totalhourstext.place(x=36, y=637)
 totaldaystext = Label(canvas, text=totaldays, font=('Comic Sans MS', 17 ), justify=CENTER)
