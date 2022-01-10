@@ -1,5 +1,10 @@
 from tkinter import *
 
+def totaldef():
+    totalhours = 'rabotaet chasy'
+    return totalhours
+    totaldays =  'rabotaet dni'
+    return totaldays
 #main settings of window
 root = Tk()
 root['bg'] = '#a7e0d9'
@@ -83,14 +88,30 @@ text20 = Label(canvas, text='7-дневное \nускорение', font=('Comi
 text20.config(bg='#a7e0d9')
 text20.place(x=1049, y=514)
 
-
+    #TOTAL TEXT
+totalhours = ' '
+totaldays = ' '
+totalhourstext = Label(canvas, text=totalhours, font=('Comic Sans MS', 17 ), justify=CENTER)
+totalhourstext.config(bg='#a7e0d9')
+totalhourstext.place(x=36, y=637)
+totaldaystext = Label(canvas, text=totaldays, font=('Comic Sans MS', 17 ), justify=CENTER)
+totaldaystext.config(bg='#a7e0d9')
+totaldaystext.place(x=540, y=637)
+    #just text of hours/days
+hourstext = Label(canvas, text='ЧАСОВ', font=('Comic Sans MS', 17 ), justify=CENTER)
+hourstext.config(bg='#a7e0d9')
+hourstext.place(x=195, y=637)
+daystext = Label(canvas, text='ДНЕЙ', font=('Comic Sans MS', 17 ), justify=CENTER)
+daystext.config(bg='#a7e0d9')
+daystext.place(x=710, y=637)
 
 #ALL ENTER TEXT
 
 
 
 #BUTTON PLACE
-
+total_btn = Button(text='Итог', command=totaldef,)
+total_btn.place(x=1049, y=637)
 
 
 
