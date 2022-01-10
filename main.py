@@ -1,12 +1,14 @@
 from tkinter import *
 
-def totaldef():
-    totalhours = 'rabotaet chasy'
-    return totalhours
-    totaldays =  'rabotaet dni'
-    return totaldays
 #main settings of window
 root = Tk()
+
+def totaldef():
+    all1min = all1mint.get()
+    all5min = all5mint.get()
+    totalhours = (int(all1min) + int(all5min))
+
+
 root['bg'] = '#a7e0d9'
 root.title('Let me take a selfie')
 root.geometry('1280x720')
@@ -89,8 +91,8 @@ text20.config(bg='#a7e0d9')
 text20.place(x=1049, y=514)
 
     #TOTAL TEXT
-totalhours = ' '
-totaldays = ' '
+totalhours = 0
+totaldays = 0
 totalhourstext = Label(canvas, text=totalhours, font=('Comic Sans MS', 17 ), justify=CENTER)
 totalhourstext.config(bg='#a7e0d9')
 totalhourstext.place(x=36, y=637)
@@ -106,11 +108,13 @@ daystext.config(bg='#a7e0d9')
 daystext.place(x=710, y=637)
 
 #ALL ENTER TEXT
-
-
+all1mint = Entry(canvas)
+all1mint.place(x=36, y=104)
+all5mint = Entry(canvas)
+all5mint.place(x=290, y=104)
 
 #BUTTON PLACE
-total_btn = Button(text='Итог', command=totaldef,)
+total_btn = Button(canvas, text='Итог', command=totaldef)
 total_btn.place(x=1049, y=637)
 
 
