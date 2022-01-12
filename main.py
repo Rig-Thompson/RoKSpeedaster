@@ -12,7 +12,7 @@ def totaldef():
 root['bg'] = '#a7e0d9'
 root.title('Let me take a selfie')
 root.geometry('1280x720')
-root.wm_attributes('-alpha', 0.65)
+#root.wm_attributes('-alpha', 0.65)
 
 #canvas block
 canvas = Canvas(root, height=720, width=1280, bg='#a7e0d9')
@@ -108,10 +108,51 @@ daystext.config(bg='#a7e0d9')
 daystext.place(x=710, y=637)
 
 #ALL ENTER TEXT
-all1mint = Entry(canvas)
+    #speddast enter_text's 1st line
+all1mint = Entry(canvas, width=23)
 all1mint.place(x=36, y=104)
-all5mint = Entry(canvas)
+all5mint = Entry(canvas, width=23)
 all5mint.place(x=290, y=104)
+all10mint = Entry(canvas, width=23)
+all10mint.place(x=36, y=104)
+all15mint = Entry(canvas, width=23)
+all15mint.place(x=290, y=104)
+all30mint = Entry(canvas, width=23)
+all30mint.place(x=36, y=104)
+    #speddast enter_text's 2st line
+all60mint = Entry(canvas, width=23)
+all60mint.place(x=290, y=104)
+all3hourt = Entry(canvas, width=23)
+all3hourt.place(x=36, y=104)
+all8hourt = Entry(canvas, width=23)
+all8hourt.place(x=290, y=104)
+all15hourt = Entry(canvas, width=23)
+all15hourt.place(x=36, y=104)
+all7dayt = Entry(canvas, width=23)
+all7dayt.place(x=290, y=104)
+    #speddast enter_text's 3st line
+all1mint = Entry(canvas, width=23)
+all1mint.place(x=36, y=104)
+all5mint = Entry(canvas, width=23)
+all5mint.place(x=290, y=104)
+all10mint = Entry(canvas, width=23)
+all10mint.place(x=36, y=104)
+all15mint = Entry(canvas, width=23)
+all15mint.place(x=290, y=104)
+all30mint = Entry(canvas, width=23)
+all30mint.place(x=36, y=104)
+    #speddast enter_text's 4st line
+all60mint = Entry(canvas, width=23)
+all60mint.place(x=290, y=104)
+all3hourt = Entry(canvas, width=23)
+all3hourt.place(x=36, y=104)
+all8hourt = Entry(canvas, width=23)
+all8hourt.place(x=290, y=104)
+all15hourt = Entry(canvas, width=23)
+all15hourt.place(x=36, y=104)
+all7dayt = Entry(canvas, width=23)
+all7dayt.place(x=290, y=104)
+
 
 #BUTTON PLACE
 total_btn = Button(canvas, text='Итог', command=totaldef)
