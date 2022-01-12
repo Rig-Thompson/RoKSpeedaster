@@ -1,16 +1,17 @@
 from tkinter import *
-totalhours1 = 0
+#totalhours1 = 0
 #main settings of window
 root = Tk()
 
 def totaldef():
-    all1min = all1mint.get()
-    all5min = all5mint.get()
-    totalhours1 = (int(all1min) + int(all5min))
-    totalhours = totalhours1
+    print('a')
+#    all1min = all1mint.get()
+#    all5min = all5mint.get()
+#    totalhours1 = (int(all1min) + int(all5min))
+#    totalhours = to#talhours1
 
 root['bg'] = '#a7e0d9'
-root.title('Let me take a selfie')
+root.title('Rise of Kingdoms: Speedaster')
 root.geometry('1280x720')
 #root.wm_attributes('-alpha', 0.65)
 
@@ -93,7 +94,7 @@ text20.place(x=1049, y=514)
     #TOTAL TEXT
 totalhours = 0
 totaldays = 0
-totalhourstext = Label(canvas, textvariable=totalhours, font=('Comic Sans MS', 17 ), justify=CENTER)
+totalhourstext = Label(canvas, text=totalhours, font=('Comic Sans MS', 17 ), justify=CENTER)
 totalhourstext.config(bg='#a7e0d9')
 totalhourstext.place(x=36, y=637)
 totaldaystext = Label(canvas, text=totaldays, font=('Comic Sans MS', 17 ), justify=CENTER)
@@ -110,48 +111,48 @@ daystext.place(x=710, y=637)
 #ALL ENTER TEXT
     #speddast enter_text's 1st line
 all1mint = Entry(canvas, width=23)
-all1mint.place(x=36, y=104)
+all1mint.place(x=36, y=115)
 all5mint = Entry(canvas, width=23)
-all5mint.place(x=290, y=104)
+all5mint.place(x=290, y=115)
 all10mint = Entry(canvas, width=23)
-all10mint.place(x=36, y=104)
+all10mint.place(x=544, y=115)
 all15mint = Entry(canvas, width=23)
-all15mint.place(x=290, y=104)
+all15mint.place(x=797, y=115)
 all30mint = Entry(canvas, width=23)
-all30mint.place(x=36, y=104)
+all30mint.place(x=1049, y=115)
     #speddast enter_text's 2st line
 all60mint = Entry(canvas, width=23)
-all60mint.place(x=290, y=104)
+all60mint.place(x=36, y=255)
 all3hourt = Entry(canvas, width=23)
-all3hourt.place(x=36, y=104)
+all3hourt.place(x=290, y=255)
 all8hourt = Entry(canvas, width=23)
-all8hourt.place(x=290, y=104)
+all8hourt.place(x=544, y=255)
 all15hourt = Entry(canvas, width=23)
-all15hourt.place(x=36, y=104)
+all15hourt.place(x=797, y=255)
 all7dayt = Entry(canvas, width=23)
-all7dayt.place(x=290, y=104)
+all7dayt.place(x=1049, y=255)
     #speddast enter_text's 3st line
-all1mint = Entry(canvas, width=23)
-all1mint.place(x=36, y=104)
-all5mint = Entry(canvas, width=23)
-all5mint.place(x=290, y=104)
-all10mint = Entry(canvas, width=23)
-all10mint.place(x=36, y=104)
-all15mint = Entry(canvas, width=23)
-all15mint.place(x=290, y=104)
-all30mint = Entry(canvas, width=23)
-all30mint.place(x=36, y=104)
+spec1mint = Entry(canvas, width=23)
+spec1mint.place(x=36, y=432)
+spec5mint = Entry(canvas, width=23)
+spec5mint.place(x=290, y=432)
+spec10mint = Entry(canvas, width=23)
+spec10mint.place(x=544, y=432)
+spec15mint = Entry(canvas, width=23)
+spec15mint.place(x=797, y=432)
+spec30mint = Entry(canvas, width=23)
+spec30mint.place(x=1049, y=432)
     #speddast enter_text's 4st line
-all60mint = Entry(canvas, width=23)
-all60mint.place(x=290, y=104)
-all3hourt = Entry(canvas, width=23)
-all3hourt.place(x=36, y=104)
-all8hourt = Entry(canvas, width=23)
-all8hourt.place(x=290, y=104)
-all15hourt = Entry(canvas, width=23)
-all15hourt.place(x=36, y=104)
-all7dayt = Entry(canvas, width=23)
-all7dayt.place(x=290, y=104)
+spec60mint = Entry(canvas, width=23)
+spec60mint.place(x=36, y=585)
+spec3hourt = Entry(canvas, width=23)
+spec3hourt.place(x=290, y=585)
+spec8hourt = Entry(canvas, width=23)
+spec8hourt.place(x=544, y=585)
+spec15hourt = Entry(canvas, width=23)
+spec15hourt.place(x=797, y=585)
+spec7dayt = Entry(canvas, width=23)
+spec7dayt.place(x=1049, y=585)
 
 
 #BUTTON PLACE
