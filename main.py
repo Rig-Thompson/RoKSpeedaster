@@ -7,20 +7,42 @@ root = Tk()
 totalhours = 0
 totaldays = 0
 
+all1mint = 0
+all5mint = 0
+all10mint = 0
+all15mint = 0
+all30mint = 0
+all60mint = 0
+all3hourt = 0
+all8hourt = 0
+all15hourt = 0
+all7dayt = 0
+spec1mint = 0
+spec5mint = 0
+spec10mint = 0
+spec15mint = 0
+spec30mint = 0
+spec60mint = 0
+spec3hourt = 0
+spec8hourt = 0
+spec15hourt = 0
+spec7dayt = 0
+
 def totaldef():
-    totalhours = int(all1mint.get()) + int(all5mint.get())
+    totalhours = (int(all1mint.get()) + int(all5mint.get()) * 5 + int(all10mint.get()) * 10\
+                  + int(all15mint.get()) * 15 + int(all30mint.get()) * 30\
+                  + int(all60mint.get()) * 60 + int(all3hourt.get()) * 180\
+                  + int(all8hourt.get()) * 480 + int(all15hourt.get()) * 900\
+                  + int(all7dayt.get()) * 10080 + int(spec1mint.get())\
+                  + int(spec5mint.get()) * 5 + int(spec10mint.get()) * 10\
+                  + int(spec15mint.get()) * 15 + int(spec30mint.get()) * 30\
+                  + int(spec60mint.get()) * 60 + int(spec3hourt.get()) * 180\
+                  + int(spec8hourt.get()) * 480 + int(spec15hourt.get()) * 900\
+                  + int(spec7dayt.get()) * 10080) // 60
     totaldays = totalhours // 24
     print(totalhours)
     totalhourstext.config(text=f'ЧАСЫ: {totalhours}')
     totaldaystext.config(text=f'ДНИ: {totaldays}')
-
-    #totalhourstext = Label(canvas, text=f'ЧАСЫ: {totalhours}', font=('Comic Sans MS', 25), justify=LEFT)
-    #totalhourstext.config(bg='#ff0000')
-    #  totalhourstext.place(x=36, y=637, width=200, height=70)
-    #   totaldaystext = Label(canvas, text=f'ДНЕЙ: {totaldays}', font=('Comic Sans MS', 25), justify=LEFT)
-    #  totaldaystext.config(bg='#ff0000')
-    #  totaldaystext.place(x=540, y=637, width=200, height=70)
-    #totalhours = totalhours1
 
 root['bg'] = '#ff9966'
 root.title('Rise of Kingdoms: Speedaster')
@@ -36,6 +58,20 @@ canvas.pack()
 #frame
 frame = Frame(root, bg='#b22222')
 frame.place(x=36, y=700, width=657, height=10)
+
+#BUTTON PLACE
+total_btn = Button(canvas, text='Результат', font=('Comic Sans MS', 24, 'bold'), command=totaldef)
+total_btn.config(bg='#b22222', fg='#ff7518')
+total_btn.place(x=962, y=637, width=236, height=70)
+
+    #text of total_hours
+totalhourstext = Label(canvas, text=f'ЧАСЫ: {totalhours}', font=('Comic Sans MS', 25))
+totalhourstext.config(bg='#b22222', anchor=W, fg='#ff7518')
+totalhourstext.place(x=36, y=637, width=329, height=70)
+
+totaldaystext = Label(canvas, text=f'ДНИ: {totaldays}', font=('Comic Sans MS', 25))
+totaldaystext.config(bg='#b22222', anchor=W,fg='#ff7518')
+totaldaystext.place(x=365, y=637, width=328, height=70)
 
 #ALL TEXT PLACE
 alltext = Label(canvas, text='Общие ускорения', font=('Comic Sans MS', 17, 'bold')) #allest
@@ -158,19 +194,6 @@ spec15hourt.place(x=797, y=585, width=150, height=40)
 spec7dayt = Entry(canvas, font=('Comic Sans MS', 17), bg='#ff7518')
 spec7dayt.place(x=1049, y=585, width=150, height=40)
 
-
-#BUTTON PLACE
-total_btn = Button(canvas, text='Результат', font=('Comic Sans MS', 24, 'bold'), command=totaldef)
-total_btn.config(bg='#b22222', fg='#ff7518')
-total_btn.place(x=962, y=637, width=236, height=70)
-
-    #text of total_hours
-totalhourstext = Label(canvas, text=f'ЧАСЫ: {totalhours}', font=('Comic Sans MS', 25))
-totalhourstext.config(bg='#b22222', anchor=W, fg='#ff7518')
-totalhourstext.place(x=36, y=637, width=329, height=70)
-
-totaldaystext = Label(canvas, text=f'ДНИ: {totaldays}', font=('Comic Sans MS', 25))
-totaldaystext.config(bg='#b22222', anchor=W,fg='#ff7518')
-totaldaystext.place(x=365, y=637, width=328, height=70)
-
 root.mainloop()
+
+
