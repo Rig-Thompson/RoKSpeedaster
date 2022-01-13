@@ -3,21 +3,39 @@ from tkinter import *
 #main settings of window
 root = Tk()
 
+#peremen
+totalhours = 0
+totaldays = 0
+
 def totaldef():
-    print('a')
-#    all1min = all1mint.get()
-#    all5min = all5mint.get()
-#    totalhours1 = (int(all1min) + int(all5min))
-#    totalhours = to#talhours1
+    totalhours = int(all1mint.get()) + int(all5mint.get())
+    totaldays = totalhours // 24
+    print(totalhours)
+    totalhourstext.config(text=f'ЧАСЫ: {totalhours}')
+    totaldaystext.config(text=f'ДНИ: {totaldays}')
+
+    #totalhourstext = Label(canvas, text=f'ЧАСЫ: {totalhours}', font=('Comic Sans MS', 25), justify=LEFT)
+    #totalhourstext.config(bg='#ff0000')
+    #  totalhourstext.place(x=36, y=637, width=200, height=70)
+    #   totaldaystext = Label(canvas, text=f'ДНЕЙ: {totaldays}', font=('Comic Sans MS', 25), justify=LEFT)
+    #  totaldaystext.config(bg='#ff0000')
+    #  totaldaystext.place(x=540, y=637, width=200, height=70)
+    #totalhours = totalhours1
 
 root['bg'] = '#ff9966'
 root.title('Rise of Kingdoms: Speedaster')
 root.geometry('1280x720')
+root.resizable(width=False, height=False)
+
 #root.wm_attributes('-alpha', 0.65)
 
 #canvas block
 canvas = Canvas(root, height=720, width=1280, bg='#ff9966')
 canvas.pack()
+
+#frame
+frame = Frame(root, bg='#b22222')
+frame.place(x=36, y=700, width=657, height=10)
 
 #ALL TEXT PLACE
 alltext = Label(canvas, text='Общие ускорения', font=('Comic Sans MS', 17, 'bold')) #allest
@@ -84,7 +102,7 @@ text17.place(x=290, y=514, width=150, height=65)
 text18 = Label(canvas, text='8-часовое \nускорение', font=('Comic Sans MS', 17 ), justify=CENTER)
 text18.config(bg='#ff9966')
 text18.place(x=544, y=514, width=150, height=65)
-text19 = Label(canvas, text='15-часовое \nускорение', font=('Comic Sans MS', 17 ), justify=CENTER)
+text19 = Label(canvas, text='15-часовое \nускорение', font=('Comic Sans MS', 17 ))
 text19.config(bg='#ff9966')
 text19.place(x=797, y=514, width=150, height=65)
 text20 = Label(canvas, text='7-дневное \nускорение', font=('Comic Sans MS', 17 ), justify=CENTER)
@@ -92,22 +110,7 @@ text20.config(bg='#ff9966')
 text20.place(x=1049, y=514, width=150, height=65)
 
     #TOTAL TEXT
-totalhours = 0
-totaldays = 0
-totalhourstext = Label(canvas, text=totalhours, font=('Comic Sans MS', 25), justify=RIGHT)
-totalhourstext.config(bg='#ff0000')
-totalhourstext.place(x=36, y=637, width=200, height=70)
-totaldaystext = Label(canvas, text=totaldays, font=('Comic Sans MS', 25), justify=RIGHT)
-totaldaystext.config(bg='#ff0000')
-totaldaystext.place(x=540, y=637, width=200, height=70)
-    #just text of hours/days
-hourstext = Label(canvas, text='ЧАСОВ', font=('Comic Sans MS', 25), justify=LEFT)
-hourstext.config(bg='#ff0000')
-hourstext.place(x=195, y=637, width=200, height=70)
 
-daystext = Label(canvas, text='ДНЕЙ', font=('Comic Sans MS', 25), justify=LEFT)
-daystext.config(bg='#ff0000')
-daystext.place(x=710, y=637, width=200, height=70)
 
 #ALL ENTER TEXT
     #speddast enter_text's 1st line
@@ -159,12 +162,15 @@ spec7dayt.place(x=1049, y=585, width=150, height=40)
 #BUTTON PLACE
 total_btn = Button(canvas, text='Результат', font=('Comic Sans MS', 24, 'bold'), command=totaldef)
 total_btn.config(bg='#b22222', fg='#ff7518')
-total_btn.place(x=962, y=637, width=236, height=65)
+total_btn.place(x=962, y=637, width=236, height=70)
 
+    #text of total_hours
+totalhourstext = Label(canvas, text=f'ЧАСЫ: {totalhours}', font=('Comic Sans MS', 25))
+totalhourstext.config(bg='#b22222', anchor=W, fg='#ff7518')
+totalhourstext.place(x=36, y=637, width=329, height=70)
 
-
-#frame
-#frame = Frame(root)
-#frame.place(relx=0.1, rely=0.1, relwidth=1, relheight=1)
+totaldaystext = Label(canvas, text=f'ДНИ: {totaldays}', font=('Comic Sans MS', 25))
+totaldaystext.config(bg='#b22222', anchor=W,fg='#ff7518')
+totaldaystext.place(x=365, y=637, width=328, height=70)
 
 root.mainloop()
