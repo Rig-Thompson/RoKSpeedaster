@@ -4,31 +4,15 @@ from tkinter import *
 root = Tk()
 
 #peremen
-totalhours = 0
-totaldays = 0
 
-all1mint = 0
-all5mint = 0
-all10mint = 0
-all15mint = 0
-all30mint = 0
-all60mint = 0
-all3hourt = 0
-all8hourt = 0
-all15hourt = 0
-all7dayt = 0
-spec1mint = 0
-spec5mint = 0
-spec10mint = 0
-spec15mint = 0
-spec30mint = 0
-spec60mint = 0
-spec3hourt = 0
-spec8hourt = 0
-spec15hourt = 0
-spec7dayt = 0
+totaldays = 0
+totalhours = 0
+a1m = 0
+
 
 def totaldef():
+    totalhours = 0
+
     totalhours = (int(all1mint.get()) + int(all5mint.get()) * 5 + int(all10mint.get()) * 10\
                   + int(all15mint.get()) * 15 + int(all30mint.get()) * 30\
                   + int(all60mint.get()) * 60 + int(all3hourt.get()) * 180\
@@ -43,6 +27,8 @@ def totaldef():
     print(totalhours)
     totalhourstext.config(text=f'ЧАСЫ: {totalhours}')
     totaldaystext.config(text=f'ДНИ: {totaldays}')
+
+#def replace_num(numlist):
 
 root['bg'] = '#ff9966'
 root.title('Rise of Kingdoms: Speedaster')
@@ -62,7 +48,10 @@ frame.place(x=36, y=700, width=657, height=10)
 #BUTTON PLACE
 total_btn = Button(canvas, text='Результат', font=('Comic Sans MS', 24, 'bold'), command=totaldef)
 total_btn.config(bg='#b22222', fg='#ff7518')
-total_btn.place(x=962, y=637, width=236, height=70)
+total_btn.place(x=694, y=637, width=236, height=70)
+#total_btn = Button(canvas, text='ПРИМЕНИТЬ', font=('Comic Sans MS', 24, 'bold'), command=replace_num())
+#total_btn.config(bg='#b22222', fg='#ff7518')
+#total_btn.place(x=962, y=637, width=236, height=70)
 
     #text of total_hours
 totalhourstext = Label(canvas, text=f'ЧАСЫ: {totalhours}', font=('Comic Sans MS', 25))
@@ -150,7 +139,7 @@ text20.place(x=1049, y=514, width=150, height=65)
 
 #ALL ENTER TEXT
     #speddast enter_text's 1st line
-all1mint = Entry(canvas, font=('Comic Sans MS', 17,), bg='#ff7518')
+all1mint = Entry(canvas, font=('Comic Sans MS', 17), bg='#ff7518')
 all1mint.place(x=36, y=115, width=150, height=40)
 all5mint = Entry(canvas, font=('Comic Sans MS', 17), bg='#ff7518')
 all5mint.place(x=290, y=115, width=150, height=40)
@@ -193,6 +182,9 @@ spec15hourt = Entry(canvas, font=('Comic Sans MS', 17), bg='#ff7518')
 spec15hourt.place(x=797, y=585, width=150, height=40)
 spec7dayt = Entry(canvas, font=('Comic Sans MS', 17), bg='#ff7518')
 spec7dayt.place(x=1049, y=585, width=150, height=40)
+
+
+
 
 root.mainloop()
 
